@@ -22,8 +22,8 @@
     <script src="https://unpkg.com/@highlightjs/cdn-assets@11/highlight.min.js"></script>
 
     <!-- shared helpers -->
-    <!-- Path is now relative to root -->
-    <script type="module" src="/shared/main.js"></script>
+    <!-- Use relative path -->
+    <script type="module" src="shared/main.js"></script>
   </head>
 
   <body>
@@ -63,7 +63,8 @@
 
     <!-- bootstrap metadata + code highlight -->
     <script type="module">
-      import { initSketchPage } from "/shared/main.js";
+      // Use relative path
+      import { initSketchPage } from "./shared/main.js";
       initSketchPage(); // This function will handle loading data based on URL param
     </script>
   </body>

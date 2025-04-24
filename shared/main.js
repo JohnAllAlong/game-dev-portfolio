@@ -2,8 +2,8 @@
 
 export function buildCard({ slug, title, thumb }) {
   const a = Object.assign(document.createElement("a"), {
-    // Link to the viewer page with the slug as a URL parameter
-    href: `/sketch-viewer.html?sketch=${slug}`,
+    // Link relative to index.html (which is at the root)
+    href: `sketch-viewer.html?sketch=${slug}`,
   });
 
   a.innerHTML = `
@@ -17,6 +17,7 @@ export function buildCard({ slug, title, thumb }) {
 }
 
 export async function loadCode(path, element) {
+  // Fetch path is now relative to the calling HTML (sketch-viewer.html)
   const text = await fetch(path).then((r) => r.text());
   element.textContent = text.trim();
   hljs.highlightElement(element); // highlight.js is already on the page
@@ -26,14 +27,14 @@ export async function loadCode(path, element) {
 
 export function buildNavMenu(projects, currentSlug = null) {
   const nav = document.createElement("nav");
-  // Ensure home link points to root
-  const homeLink = `<a href="/">Home</a>`;
+  // Link relative to the current HTML file (index.html or sketch-viewer.html)
+  // './' or 'index.html' for home
+  const homeLink = `<a href="./">Home</a>`;
   const sketchLinks = projects
     .map((p) => {
-      // Add 'aria-current' if it's the current page
       const currentAttr = p.slug === currentSlug ? ' aria-current="page"' : "";
-      // Link to the viewer page with the slug as a URL parameter
-      return `<a href="/sketch-viewer.html?sketch=${p.slug}"${currentAttr}>${p.title}</a>`;
+      // Link relative to the current HTML file
+      return `<a href="sketch-viewer.html?sketch=${p.slug}"${currentAttr}>${p.title}</a>`;
     })
     .join("\n");
   nav.innerHTML = `${homeLink}\n${sketchLinks}`;
@@ -60,8 +61,8 @@ export async function initSketchPage() {
   }
 
   try {
-    // Fetch projects data - path from root is fine
-    const projects = await fetch("/projects.json").then((r) => r.json());
+    // Fetch projects data relative to sketch-viewer.html
+    const projects = await fetch("projects.json").then((r) => r.json());
 
     // Add navigation menu, passing current slug for highlighting
     const navMenu = buildNavMenu(projects, slug);
@@ -83,10 +84,11 @@ export async function initSketchPage() {
     document.getElementById("title").textContent = meta.title;
     document.getElementById("desc").textContent = meta.desc;
 
-    // Set iframe source dynamically
+    // Set iframe source relative to sketch-viewer.html
     const iframe = document.getElementById("sketch-frame");
     if (iframe) {
-      iframe.src = `/sketches/${slug}/sketch.html`;
+      // Path to sketch.html inside the specific sketch folder
+      iframe.src = `sketches/${slug}/sketch.html`;
     } else {
       console.error("Iframe element 'sketch-frame' not found.");
     }
@@ -99,10 +101,11 @@ export async function initSketchPage() {
       figcaptionElement.style.display = "none"; // Hide if no caption
     }
 
-    // Load main code dynamically
+    // Load main code relative to sketch-viewer.html
     const codeBlockElement = document.getElementById("codeblock");
     if (codeBlockElement) {
-      const codePath = `/sketches/${slug}/sketch.js`;
+      // Path to sketch.js inside the specific sketch folder
+      const codePath = `sketches/${slug}/sketch.js`;
       const codeFilenameElement = document.getElementById("code-filename");
       if (codeFilenameElement) {
         codeFilenameElement.textContent = "sketch.js";
@@ -112,7 +115,7 @@ export async function initSketchPage() {
       console.error("Code block element 'codeblock' not found.");
     }
 
-    // Load extra code files if specified
+    // Load extra code files relative to sketch-viewer.html
     const extraCodeContainer = document.getElementById("extra-code-container");
     if (extraCodeContainer && meta.extraFiles && meta.extraFiles.length > 0) {
       for (const filename of meta.extraFiles) {
@@ -132,8 +135,9 @@ export async function initSketchPage() {
         extraCodeContainer.appendChild(heading);
         extraCodeContainer.appendChild(pre);
 
-        // Load and highlight the code
-        const filePath = `/sketches/${slug}/${filename}`;
+        // Load and highlight the code using relative path
+        // Path to the extra file inside the specific sketch folder
+        const filePath = `sketches/${slug}/${filename}`;
         try {
           await loadCode(filePath, code);
         } catch (fileError) {
@@ -166,18 +170,19 @@ export async function initializePortfolio() {
   }
 
   try {
+    // Fetch relative to index.html
     const response = await fetch("projects.json");
     if (!response.ok) {
       throw new Error(`HTTP error! status: ${response.status}`);
     }
     const list = await response.json();
 
-    // Build and insert nav menu
-    const navMenu = buildNavMenu(list); // Assuming buildNavMenu is defined in this file
+    // Build and insert nav menu (now uses relative links)
+    const navMenu = buildNavMenu(list);
     header.prepend(navMenu);
 
-    // Build and insert project cards
-    list.forEach((info) => grid.append(buildCard(info))); // Assuming buildCard is defined in this file
+    // Build and insert project cards (now uses relative links)
+    list.forEach((info) => grid.append(buildCard(info)));
   } catch (error) {
     console.error("Failed to load projects:", error);
     grid.innerHTML = "<p>Error loading projects. Please try again later.</p>";

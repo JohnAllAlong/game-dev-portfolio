@@ -74,10 +74,18 @@ Follow these steps to add a new p5.js sketch to your portfolio:
 
 ## Hosting with GitHub Pages
 
-You can easily host this portfolio for free using GitHub Pages.
+You can easily host this portfolio for free using GitHub Pages. Because the project uses relative paths for navigation and loading resources, it should work correctly even when deployed to a subdirectory (like `https://<username>.github.io/<repository-name>/`).
 
 1.  **Create Repository:** Create a new repository on GitHub.
-2.  **Push Files:** Add your project files to the repository and push them (e.g., using `git add .`, `git commit -m "Initial commit"`, `git push origin main`).
+2.  **Push Files:** Add your project files (`index.html`, `sketch-viewer.html`, `projects.json`, `sketches/`, `shared/`, etc.) to the repository and push them. Ensure these files are at the root of the branch you are deploying from.
+    ```bash
+    # Run from inside the folder containing index.html
+    git init # If not already a git repo
+    git remote add origin <your-repo-url> # If needed
+    git add .
+    git commit -m "Initial commit"
+    git push origin main # Or your default branch
+    ```
 3.  **Enable GitHub Pages:**
     - Go to your repository on GitHub.
     - Click the "Settings" tab.

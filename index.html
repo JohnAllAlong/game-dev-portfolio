@@ -25,9 +25,10 @@
       <!-- cards injected here -->
     </main>
 
-    <script type="module" src="/shared/main.js"></script>
+    <!-- Use relative path -->
+    <script type="module" src="shared/main.js"></script>
     <script type="module">
-      import { initializePortfolio } from "/shared/main.js";
+      import { initializePortfolio } from "./shared/main.js"; // Use relative path here too
       initializePortfolio();
     </script>
   </body>
