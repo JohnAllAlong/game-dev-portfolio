@@ -1,6 +1,6 @@
 # Simple Portfolio for Projects and Sketches
 
-This is an easy-to-use template for creating a portfolio website to showcase your coding projects and interactive sketches. No complex frameworks - just basic HTML and CSS.
+This is an easy-to-use template for creating a portfolio website to showcase your coding projects and interactive sketches. No complex frameworks - just basic HTML and CSS. Your portfolio will be hosted for free using Github pages.
 
 ## Project Structure
 
@@ -16,10 +16,24 @@ This is an easy-to-use template for creating a portfolio website to showcase you
     │   ├── sketch.html     # (p5 only) The actual p5.js sketch runner
     │   ├── sketch.js       # (p5 only) The p5.js code for the sketch
     │   ├── thumb.webp      # Thumbnail image for the project card on the main page
-│   ├── [other files]   # Optional: Any other files needed by the project
+    ├── [other files]       # Optional: Any other files needed by the project
     │   └── [assets...]     # Optional: Any assets (images, etc.) used by the project
     └── ...                 # More project directories...
 ```
+
+## Hosting with GitHub Pages
+
+This portfolio is designed to be easily hosted with GitHub Pages:
+
+1. **Fork or clone** this repository
+2. **Add your projects** following the steps below
+3. **Push to GitHub**
+4. **Enable GitHub Pages** in your repository settings (Settings → Pages)
+   - Source: Deploy from a branch
+   - Branch: main (or your default branch)
+   - Folder: / (root)
+
+Your portfolio will be available at `https://<username>.github.io/<repository-name>/`
 
 ## How to Add a New Project
 
@@ -36,8 +50,8 @@ Make a new folder inside the `projects` directory. Use a simple, descriptive nam
 
 - For **p5.js sketches**:
 
-  - Add your p5.js code in a file called `sketch.js`
-  - Create a `sketch.html` file (see the `die` example for reference)
+  - Add your p5.js code in a file called `sketch.js` along with any additional javascript sketch files.
+  - Create a `sketch.html` file (see the `projects/die` example for reference)
   - Create a thumbnail image called `thumb.webp` or `thumb.gif` (400-500px wide works well)
 
 - For **other projects**:
@@ -80,17 +94,3 @@ Open the main `index.html` file in the root folder and find the `<section class=
 
 - **Styling:** The visual appearance is controlled by Simple.css, linked in the `<head>` of `index.html` and `template.html`. You can replace this with your own CSS or <a href="https://github.com/kevquirk/simple.css/wiki/Getting-Started-With-Simple.css#customise-simplecss">customize the colours used by Simple.css</a>. Custom styles can be added in `<style>` blocks (like the 2-column grid override in `index.html`).
 - **Layout:** Modify `index.html` (for the main grid) and `template.html` and `p5-template.html` to change the page structure.
-
-## Hosting with GitHub Pages
-
-This portfolio is designed to be easily hosted with GitHub Pages:
-
-1. **Fork or clone** this repository
-2. **Add your projects** following the steps above
-3. **Push to GitHub**
-4. **Enable GitHub Pages** in your repository settings (Settings → Pages)
-   - Source: Deploy from a branch
-   - Branch: main (or your default branch)
-   - Folder: / (root)
-
-Your portfolio will be available at `https://<username>.github.io/<repository-name>/`
