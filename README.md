@@ -27,7 +27,7 @@ This portfolio is designed to be easily hosted with GitHub Pages:
 
 1. **Fork or clone** this repository
 2. **Add your projects** following the steps below
-3. **Push to GitHub**
+3. **Commit and push changes to GitHub**
 4. **Enable GitHub Pages** in your repository settings (Settings → Pages)
    - Source: Deploy from a branch
    - Branch: main (or your default branch)
@@ -92,5 +92,5 @@ Open the main `index.html` file in the root folder and find the `<section class=
 
 ## Customization
 
-- **Styling:** The visual appearance is controlled by Simple.css, linked in the `<head>` of `index.html` and `template.html`. You can replace this with your own CSS or <a href="https://github.com/kevquirk/simple.css/wiki/Getting-Started-With-Simple.css#customise-simplecss">customize the colours used by Simple.css</a>. Custom styles can be added in `<style>` blocks (like the 2-column grid override in `index.html`).
+- **Styling:** The visual appearance is controlled by Simple.css, linked in the `<head>` of `index.html` and `template.html`. You can replace this with your own CSS or <a href="https://github.com/kevquirk/simple.css/wiki/Getting-Started-With-Simple.css#customise-simplecss">customize the colours used by Simple.css</a>. Custom styles can be added in `<style>` blocks (like the 2-column grid override in root `index.html`).
 - **Layout:** Modify `index.html` (for the main grid) and `template.html` and `p5-template.html` to change the page structure.
