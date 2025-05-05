@@ -2,34 +2,64 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <title>Kyle · p5.js Portfolio</title>
+    <title>Kyle · p5.js Portfolio</title>
 
     <!-- Simple.css -->
     <link rel="stylesheet" href="https://cdn.simplecss.org/simple.min.css" />
 
+    <!-- Custom style for 2-column grid -->
+    <style>
+      main > section.grid {
+        display: grid !important; /* Ensure grid display */
+        grid-template-columns: repeat(2, 1fr) !important; /* Force 2 equal columns */
+        gap: 1rem; /* Optional: Adjust gap between grid items */
+      }
+    </style>
+
     <!-- highlight.js theme (just in case) -->
-    <link
-      rel="stylesheet"
-      href="https://unpkg.com/@highlightjs/cdn-assets@11/styles/github.min.css"
-    />
+    <!-- Removed highlight.js link as it's not needed on the index page anymore -->
   </head>
 
   <body>
     <header>
-      <!-- Nav menu will be inserted here by script -->
+      <!-- Removed nav placeholder -->
       <h1>p5.js Experiments</h1>
-      <p>Generative sketches &amp; visual toys</p>
+      <p>Generative sketches & visual toys</p>
     </header>
 
-    <main id="grid">
-      <!-- cards injected here -->
+    <main>
+      <h2>Sketches</h2>
+      <!-- Replaced ul with a grid/card structure -->
+      <section class="grid">
+        <article>
+          <a href="sketches/die/index.html" aria-label="Rotating Die sketch">
+            <figure>
+              <img
+                src="sketches/die/thumb.webp"
+                alt="Animated thumbnail of a rotating 3D die"
+                loading="lazy"
+              />
+              <figcaption>Rotating Die</figcaption>
+            </figure>
+          </a>
+        </article>
+        <article>
+          <a href="sketches/die/index.html" aria-label="Rotating Die sketch">
+            <figure>
+              <img
+                src="sketches/die/thumb.webp"
+                alt="Animated thumbnail of a rotating 3D die"
+                loading="lazy"
+              />
+              <figcaption>Rotating Die</figcaption>
+            </figure>
+          </a>
+        </article>
+
+        <!-- TODO: Add more <article> elements for new sketches here -->
+      </section>
     </main>
 
-    <!-- Use relative path -->
-    <script type="module" src="shared/main.js"></script>
-    <script type="module">
-      import { initializePortfolio } from "./shared/main.js"; // Use relative path here too
-      initializePortfolio();
-    </script>
+    <!-- Removed script tags for shared/main.js and initializePortfolio -->
   </body>
 </html>
