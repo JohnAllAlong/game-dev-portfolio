@@ -19,6 +19,11 @@
       href="https://unpkg.com/@highlightjs/cdn-assets@11/styles/github-dark.min.css"
       media="(prefers-color-scheme: dark)"
     />
+    <style>
+      pre.code-wrapper {
+        padding: 0;
+      }
+    </style>
     <script src="https://unpkg.com/@highlightjs/cdn-assets@11/highlight.min.js"></script>
 
     <!-- shared helpers -->
@@ -54,7 +59,9 @@
 
       <h2>Source (<span id="code-filename">sketch.js</span>)</h2>
       <!-- Filename might be dynamic later -->
-      <pre><code id="codeblock" class="language-js"></code></pre>
+      <pre
+        class="code-wrapper"
+      ><code id="codeblock" class="language-js"></code></pre>
       <!-- Code will be loaded by JS -->
 
       <!-- Container for extra code blocks -->

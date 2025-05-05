@@ -35,16 +35,17 @@ Follow these steps to add a new p5.js sketch to your portfolio:
     - **Other `.js` files (if any):** If your sketch uses multiple JavaScript files (e.g., for classes like `Particle.js`), copy those files into the same directory.
     - **`sketch.html`** (The Sketch Runner):
       - Copy the `index.html` file from your p5.js editor project and save it as `sketch.html` in your new directory.
-        \_ Make sure it includes the p5.js library. You might need to adjust the path if you store it locally, or use a CDN link. Example using a CDN:
-        `htmlor contain only the canvas.
+      - Make sure it includes the p5.js library. You might need to adjust the path if you store it locally, or use a CDN link. Example using a CDN:
+        ```html
         <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.0/p5.min.js"></script>
-        `tch.html`:\*\*
-        _ Add `<script>` tags for **all** JavaScript files required by your sketch. **Important:** Include any custom library/class files \_before_ your main `sketch.js`.a HTML content you don't need _inside_ the sketch itself. The `<body>` should usually be empty.
-        ``htmllibrary. You might need to adjust the path if you store it locally, or use a CDN link. Example using a local copy (assuming`p5.min.js` is in the project root or a shared location):
-        <!-- Example with an extra file -->ml
+        ```
+      - Clean up any HTML content you don't need inside the sketch itself. The `<body>` should usually be empty or contain only the canvas.
+      - Add `<script>` tags for **all** JavaScript files required by your sketch. **Important:** Include any custom library/class files _before_ your main `sketch.js`.
+        ```html
+        <!-- Example with an extra file -->
         <script src="particle.js"></script>
-        <script src="sketch.js"></script>st path as needed -->
-        ``
+        <script src="sketch.js"></script>
+        ```
 
     * **`thumb.webp`**: Create a thumbnail image for your sketch and save it as `thumb.webp` (or `.jpg`/`.png`, just be consistent) in the sketch directory. Recommended size: ~400x300px.cript files required by your sketch. **Important:** Include any custom library/class files _before_ your main `sketch.js`.
 
