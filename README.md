@@ -51,7 +51,8 @@ Make a new folder inside the `projects` directory. Use a simple, descriptive nam
 - For **p5.js sketches**:
 
   - Add your p5.js code in a file called `sketch.js` along with any additional javascript sketch files.
-  - Create a `sketch.html` file (see the `projects/die` example for reference)
+  - Create a `sketch.html` file (Use a copy of the `projects/die/sketch.html` file)
+  - If you require a newer version of p5.js from 1.9.1, update the CDN script tag your 'sketch.html'
   - Create a thumbnail image called `thumb.webp` or `thumb.gif` (400-500px wide works well)
 
 - For **other projects**:
@@ -64,9 +65,8 @@ Open the `index.html` file in your project folder and:
 
 1. Replace the page title (between `<title>` tags)
 2. Replace the heading (between `<h1>` tags)
-3. **For p5.js projects**: Make sure `src="sketch.html"` is correct in the iframe tag
-4. **For other projects**: Add your link or embed your content (uncomment and edit the appropriate lines)
-5. Fill in the description, goals, and challenges sections with your project information
+3. **For non-p5 projects**: Add your link or embed your content (uncomment and edit the appropriate lines)
+4. Fill in the description, goals, and challenges sections with your project information
 
 ### 5. Add to the Main Page
 
