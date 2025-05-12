@@ -100,5 +100,16 @@ Add a new "project card" to the home page by:
 
 ## Customization
 
-- **Styling:** The visual appearance is controlled by [Simple.css](https://simplecss.org/), linked in the `<head>` of `index.html` and `template.html`. You can replace this with your own CSS or <a href="https://github.com/kevquirk/simple.css/wiki/Getting-Started-With-Simple.css#customise-simplecss">customize the colours used by Simple.css</a>. Custom styles can be added in `<style>` blocks (like the 2-column grid override in root `index.html`).
-- **Layout:** Modify `index.html` (for the home page grid) and `template.html` and `p5-template.html` to change the page structure.
+### Styling
+
+The visual appearance of the portfolio is controlled by [Simple.css](https://simplecss.org/), linked in the `<head>` of `index.html` and `template.html`. 
+
+You can replace Simple.css with your own CSS or <a href="https://github.com/kevquirk/simple.css/wiki/Getting-Started-With-Simple.css#customise-simplecss">customize the colours used by Simple.css</a>. 
+
+Custom styles can be added in the `<style>` blocks of the various `index.html` files. 
+
+### Layout
+
+Modify `index.html` (for the home page grid) and `template.html` and `p5-template.html` to change the page structure.
+
+If you plan on changing the layout, do so **before** you create your various project folders. 
