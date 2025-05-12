@@ -1,6 +1,8 @@
 # Simple Game Dev Portfolio Website
 
-Easy-to-use template for a portfolio website to showcase your coding projects, interactives sketches, and games. No complex frameworks - just HTML and CSS. Your portfolio will be hosted for free using Github pages.
+Easy-to-use template for a portfolio website to showcase your coding projects, interactives sketches, and games. 
+
+No js frameworks or libraries - just HTML and CSS. Your portfolio will be hosted for free using Github pages.
 
 ## Project Structure
 
@@ -113,3 +115,5 @@ Custom styles can be added in the `<style>` blocks of the various `index.html` f
 Modify `index.html` (for the home page grid) and `template.html` and `p5-template.html` to change the page structure.
 
 If you plan on changing the layout, do so **before** you create your various project folders. 
+
+[Learning more about HTML](https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Structuring_content/Basic_HTML_syntax) will help you restruct.
